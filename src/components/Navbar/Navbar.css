@@ -1,0 +1,82 @@
+/* **Navbar** */
+
+#navbar {
+  position: relative;
+}
+
+.ham__menu {
+  border: none;
+  font-size: 2rem;
+}
+
+.ham__menu:focus,
+.ham__menu:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.nav__link {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  padding-left: 12px !important;
+}
+
+.nav__link::after {
+  content: "";
+  height: 100%;
+  width: 0px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.nav__link:hover {
+  color: white;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.search__bar {
+  /* relative to #navbar  */
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 80%;
+  max-width: 700px;
+  transform: translate(-50%, 10px);
+}
+
+/* large screen (lg) */
+@media (min-width: 992px) {
+  /* custom width container  */
+  .nav__container {
+    width: 90%;
+  }
+
+  /* for different hover effect in larger screen  */
+  .nav__link {
+    display: flex;
+    justify-content: center;
+    color: white !important;
+  }
+
+  .nav__link::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .nav__link:hover::after {
+    width: 100%;
+  }
+}
