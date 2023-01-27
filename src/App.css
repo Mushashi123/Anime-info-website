@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --red: #eb0000;
+}
+
 body {
   background-color: black;
+}
+
+header {
+  position: relative;
 }

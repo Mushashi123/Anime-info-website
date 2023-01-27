@@ -1,0 +1,52 @@
+.custom__carousel {
+  height: 300px;
+}
+
+.custom__carousel .carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+.anime__card {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  width: 33%;
+  min-width: 400px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+}
+
+.anime__card::before {
+  content: "";
+  height: 100%;
+  width: 5px;
+  background-color: var(--red);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-caption {
+  top: 40% !important;
+  transform: translateY(-20%);
+  left: 13% !important;
+  text-align: left !important;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .custom__carousel {
+    height: 400px;
+  }
+  .carousel-caption {
+    display: block !important;
+  }
+}
