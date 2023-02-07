@@ -171,23 +171,27 @@ function NavBar() {
       {/* search items when user searches   */}
       {isSearchBarShown ? (
         <div className="search__container p-3">
-          {searchResult.map((result) => {
-            return (
-              <div className="search__item d-flex justify-content-start align-items-start mb-2 p-1">
-                <img src={result.image} alt="" className="" />
-                <div className=" ms-2">
-                  <h5 className="text-white ms-1">{result.title}</h5>
-                  <div className="text-danger">
-                    <span className="rating pe-2">
-                      <AiFillStar className="text-white" /> {result.rating}
-                    </span>
-                    |<span className="type px-2">{result.type}</span>|
-                    <span className="released px-2">{result.status}</span>
+          {searchResult.length === 0 ? (
+            <p className="h6 lead text-center">Not found</p>
+          ) : (
+            searchResult.map((result) => {
+              return (
+                <div className="search__item d-flex justify-content-start align-items-start mb-2 p-1">
+                  <img src={result.image} alt="" className="" />
+                  <div className=" ms-2">
+                    <h5 className="text-white ms-1">{result.title}</h5>
+                    <div className="text-danger">
+                      <span className="rating pe-2">
+                        <AiFillStar className="text-white" /> {result.rating}
+                      </span>
+                      |<span className="type px-2">{result.type}</span>|
+                      <span className="released px-2">{result.status}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
       ) : (
         <></>

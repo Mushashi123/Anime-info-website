@@ -15,3 +15,7 @@ body {
 header {
   position: relative;
 }
+
+.red {
+  background-color: var(--red);
+}
