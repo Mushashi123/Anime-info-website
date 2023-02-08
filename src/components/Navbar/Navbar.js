@@ -15,6 +15,7 @@ import {
 import "./Navbar.css";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import Logo from "../Logo/Logo";
 
 function NavBar() {
   const [isSearchBarShown, setIsSearchBarShown] = useState(false);
@@ -25,8 +26,6 @@ function NavBar() {
   const toggleSearchBar = () => {
     setIsSearchBarShown(!isSearchBarShown);
   };
-
-  const logo = <span className="logo fw-bold">OtaKu</span>;
 
   const hideSeachBarOnClickAnywhere = (e) => {
     //hides searc bar if you click anywhere else except search bar and search icon
@@ -114,7 +113,7 @@ function NavBar() {
               <GiHamburgerMenu />
             </Navbar.Toggle>
             <Navbar.Brand href="#" className="ms-2 fs-2 text-white">
-              {logo}
+              <Logo />
             </Navbar.Brand>
           </Col>
           <Col className="d-none d-lg-block">
@@ -125,15 +124,21 @@ function NavBar() {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id="offcanvasNavbarLabel-expand-lg">
-                  {logo}
+                  <Logo />
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
-                  <Nav.Link href="#action1" className="m-2 px-1 fs-5 nav__link">
+                  <Nav.Link
+                    href="#action1"
+                    className="m-2 px-1 fs-5 nav__link "
+                  >
                     Home
                   </Nav.Link>
-                  <Nav.Link href="#action2" className="m-2 px-1 fs-5 nav__link">
+                  <Nav.Link
+                    href="#action2"
+                    className="m-2 px-1 fs-5 nav__link "
+                  >
                     Genre
                   </Nav.Link>
                 </Nav>

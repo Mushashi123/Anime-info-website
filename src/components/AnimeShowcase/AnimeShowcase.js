@@ -56,7 +56,7 @@ const AnimeShowcase = () => {
           {/* top anime list  */}
           {topAnime.map((anime) => {
             return (
-              <div className="grid-item">
+              <div className="grid-item" key={anime._id}>
                 <MovieCard title={anime.title} image={anime.image} />
               </div>
             );

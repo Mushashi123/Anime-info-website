@@ -1,0 +1,40 @@
+a {
+  text-decoration: none;
+}
+
+footer .genre-link {
+  transition: 0.1s all linear;
+  /* color: red !important; */
+}
+
+footer .genre-link:hover {
+  color: red !important;
+}
+
+footer .container-small {
+  max-width: 754px;
+  width: 70%;
+  margin: auto;
+}
+
+footer .logo {
+  font-size: 2.4rem;
+}
+
+footer .logo img {
+  width: 100px;
+}
+
+footer .fs-small {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  footer .logo {
+    font-size: 3rem;
+  }
+
+  footer .logo img {
+    width: 120px;
+  }
+}

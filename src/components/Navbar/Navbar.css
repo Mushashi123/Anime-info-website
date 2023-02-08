@@ -11,8 +11,8 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.logo {
-  color: #eb0000;
+#navbar .logo img {
+  display: none;
 }
 
 .bg__black {
@@ -110,6 +110,13 @@
   width: 49px;
   height: 68px;
   object-fit: cover;
+}
+
+/* md screen  */
+@media (min-width: 768px) {
+  #navbar .logo img {
+    display: inline-block;
+  }
 }
 
 /* large screen (lg) */
