@@ -4,6 +4,7 @@ import { FaPlay } from "react-icons/fa";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import image from "../../assets/images/OIP.jpg";
+import { Link } from "react-router-dom";
 
 function Slider() {
   const [animeList, setAnimeList] = useState([]);
@@ -50,10 +51,10 @@ function Slider() {
                 <p className="anime__description">
                   {`Watch ${anime.title} online for free, in BingeMe.com `}
                 </p>
-                <button className="btn btn-danger">
+                <Link to={`/anime/${anime._id}`} className="btn btn-danger">
                   <FaPlay></FaPlay>
                   <span className="ms-2">Watch Now</span>
-                </button>
+                </Link>
               </div>
             </Carousel.Caption>
           </Carousel.Item>

@@ -1,7 +1,7 @@
 import "./AnimeShowcase.css";
-import MovieCard from "./AnimeCard/AnimeCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import AnimeCard from "./AnimeCard/AnimeCard";
 
 const AnimeShowcase = () => {
   const [topAnime, setTopAnime] = useState([]);
@@ -44,7 +44,7 @@ const AnimeShowcase = () => {
             Top Rated
           </a>
           <a
-            href="#"
+            href="#helllo"
             className="btn btn-danger ms-auto rounded-0 fs-5 fw-normal"
           >
             View more...
@@ -57,7 +57,11 @@ const AnimeShowcase = () => {
           {topAnime.map((anime) => {
             return (
               <div className="grid-item" key={anime._id}>
-                <MovieCard title={anime.title} image={anime.image} />
+                <AnimeCard
+                  title={anime.title}
+                  image={anime.image}
+                  id={anime._id}
+                />
               </div>
             );
           })}

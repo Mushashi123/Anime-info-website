@@ -16,12 +16,14 @@ import "./Navbar.css";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Logo from "../Logo/Logo";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const [isSearchBarShown, setIsSearchBarShown] = useState(false);
   const [searchText, setSearchText] = useState("");
   const navbarRef = useRef();
   const [searchResult, setSearchResult] = useState([]);
+  const hamMenu = useRef();
 
   const toggleSearchBar = () => {
     setIsSearchBarShown(!isSearchBarShown);
@@ -109,6 +111,7 @@ function NavBar() {
             <Navbar.Toggle
               aria-controls="offcanvasNavbar-expand-lg"
               className="ham__menu text-white"
+              ref={hamMenu}
             >
               <GiHamburgerMenu />
             </Navbar.Toggle>
@@ -129,18 +132,15 @@ function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
-                  <Nav.Link
-                    href="#action1"
-                    className="m-2 px-1 fs-5 nav__link "
-                  >
+                  <Link to="/" className="m-2 px-1 fs-5 nav__link nav-link">
                     Home
-                  </Nav.Link>
-                  <Nav.Link
-                    href="#action2"
-                    className="m-2 px-1 fs-5 nav__link "
+                  </Link>
+                  <Link
+                    to="/genre"
+                    className="m-2 px-1 fs-5 nav__link nav-link"
                   >
                     Genre
-                  </Nav.Link>
+                  </Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -181,7 +181,10 @@ function NavBar() {
           ) : (
             searchResult.map((result) => {
               return (
-                <div className="search__item d-flex justify-content-start align-items-start mb-2 p-1">
+                <div
+                  key={result._id}
+                  className="search__item d-flex justify-content-start align-items-start mb-2 p-1"
+                >
                   <img src={result.image} alt="" className="" />
                   <div className=" ms-2">
                     <h5 className="text-white ms-1">{result.title}</h5>
