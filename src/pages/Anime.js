@@ -17,7 +17,6 @@ const Anime = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setAnime(res.data);
       })
       .catch((err) => {
@@ -47,8 +46,12 @@ const Anime = () => {
               </div>
 
               <div className=" mt-5">
-                <h3 className="text-center text-lg-start">{anime.title}</h3>
-                <p className="lead para__sm mt-3">{anime.synopsis}</p>
+                <p className="h2 text-center text-lg-start text-danger">
+                  {anime.title}
+                </p>
+                <p className="lead para__sm mt-3 text-white">
+                  {anime.synopsis}
+                </p>
                 <div className=" mt-3 d-flex">
                   <div>
                     <p>

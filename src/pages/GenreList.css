@@ -1,0 +1,9 @@
+#genre__list {
+  padding: 90px;
+}
+
+@media (min-width: 992px) {
+  #genre__list {
+    padding-top: 120px;
+  }
+}

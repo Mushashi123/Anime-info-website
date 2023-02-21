@@ -1,0 +1,9 @@
+#genre {
+  padding-top: 90px;
+}
+
+@media (min-width: 992px) {
+  #genre {
+    padding-top: 120px;
+  }
+}

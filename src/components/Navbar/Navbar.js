@@ -30,6 +30,11 @@ function NavBar() {
   };
 
   const hideSeachBarOnClickAnywhere = (e) => {
+    //hides search bar if one of the search item is clicked but sustains the searched text
+    if (e.target.closest(".search__item")) {
+      setIsSearchBarShown(false);
+      return;
+    }
     //hides searc bar if you click anywhere else except search bar and search icon
     if (
       e.target.classList.contains("search__icon") ||
@@ -181,22 +186,21 @@ function NavBar() {
           ) : (
             searchResult.map((result) => {
               return (
-                <div
-                  key={result._id}
-                  className="search__item d-flex justify-content-start align-items-start mb-2 p-1"
-                >
-                  <img src={result.image} alt="" className="" />
-                  <div className=" ms-2">
-                    <h5 className="text-white ms-1">{result.title}</h5>
-                    <div className="text-danger">
-                      <span className="rating pe-2">
-                        <AiFillStar className="text-white" /> {result.rating}
-                      </span>
-                      |<span className="type px-2">{result.type}</span>|
-                      <span className="released px-2">{result.status}</span>
+                <Link to={`/anime/${result._id}`} key={result._id}>
+                  <div className="search__item d-flex justify-content-start align-items-start mb-2 p-1">
+                    <img src={result.image} alt="" className="" />
+                    <div className=" ms-2">
+                      <h5 className="text-white ms-1">{result.title}</h5>
+                      <div className="text-danger">
+                        <span className="rating pe-2">
+                          <AiFillStar className="text-white" /> {result.rating}
+                        </span>
+                        |<span className="type px-2">{result.type}</span>|
+                        <span className="released px-2">{result.status}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })
           )}

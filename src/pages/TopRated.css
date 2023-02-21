@@ -1,0 +1,14 @@
+#top-rated {
+  padding-top: 90px;
+}
+
+.pagination .btn {
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 992px) {
+  #top-rated {
+    padding-top: 120px;
+  }
+}

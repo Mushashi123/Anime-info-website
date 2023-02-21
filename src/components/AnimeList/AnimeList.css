@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 168px));
+  gap: 10px;
+  justify-content: center;
+}
+
+.grid-item {
+  height: 244px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    justify-content: start;
+  }
+}

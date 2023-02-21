@@ -1,6 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import "./Slider.css";
-import { FaPlay } from "react-icons/fa";
+import { SlBookOpen } from "react-icons/sl";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import image from "../../assets/images/OIP.jpg";
@@ -10,7 +10,7 @@ function Slider() {
   const [animeList, setAnimeList] = useState([]);
   const url = "https://anime-db.p.rapidapi.com/anime";
 
-  useState(() => {
+  useEffect(() => {
     axios
       .get(url, {
         params: {
@@ -27,7 +27,6 @@ function Slider() {
         if (res.request.status !== 200) {
           // throw new Error(res.)
         }
-        console.log(res.data.data);
         setAnimeList(res.data.data);
       })
       .catch((err) => {
@@ -49,11 +48,11 @@ function Slider() {
               <div className="anime__card p-3">
                 <h3 className="anime__title">{anime.title}</h3>
                 <p className="anime__description">
-                  {`Watch ${anime.title} online for free, in BingeMe.com `}
+                  {`Get information about ${anime.title} online, easily in AnInfo.com `}
                 </p>
                 <Link to={`/anime/${anime._id}`} className="btn btn-danger">
-                  <FaPlay></FaPlay>
-                  <span className="ms-2">Watch Now</span>
+                  <SlBookOpen></SlBookOpen>
+                  <span className="ms-2">Read Now</span>
                 </Link>
               </div>
             </Carousel.Caption>

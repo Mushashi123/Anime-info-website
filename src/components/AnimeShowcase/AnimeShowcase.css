@@ -1,25 +1,19 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 168px));
-  gap: 10px;
-  justify-content: center;
-}
-
-.grid-item {
-  height: 244px;
-}
-
 .container-custom {
   width: 100%;
   margin: auto;
 }
 
+.btn-title {
+  cursor: default !important;
+}
+
+.btn-title:hover {
+  background-color: transparent !important;
+  color: red !important;
+}
+
 @media (min-width: 768px) {
   .container-custom {
     width: 93%;
-  }
-
-  .grid {
-    justify-content: start;
   }
 }
